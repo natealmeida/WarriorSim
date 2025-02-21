@@ -49,8 +49,10 @@ SIM.UI = {
             $('section.settings').toggleClass('active');
             view.sidebar.find('.js-stats').removeClass('active');
             view.sidebar.find('.js-profiles').removeClass('active');
+            view.sidebar.find('.js-matrix').removeClass('active');
             $('section.stats').removeClass('active');
             $('section.profiles').removeClass('active');
+            $('section.matrix').removeClass('active');
             view.body.removeClass('sidebar-mobile-open');
         });
 
@@ -62,8 +64,10 @@ SIM.UI = {
             $('section.profiles').toggleClass('active');
             view.sidebar.find('.js-stats').removeClass('active');
             view.sidebar.find('.js-settings').removeClass('active');
+            view.sidebar.find('.js-matrix').removeClass('active');
             $('section.stats').removeClass('active');
             $('section.settings').removeClass('active');
+            $('section.matrix').removeClass('active');
             view.body.removeClass('sidebar-mobile-open');
             SIM.PROFILES.buildProfiles();
         });
@@ -90,8 +94,25 @@ SIM.UI = {
             $('section.stats').toggleClass('active');
             view.sidebar.find('.js-settings').removeClass('active');
             view.sidebar.find('.js-profiles').removeClass('active');
+            view.sidebar.find('.js-matrix').removeClass('active');
             $('section.settings').removeClass('active');
             $('section.profiles').removeClass('active');
+            $('section.matrix').removeClass('active');
+            view.body.removeClass('sidebar-mobile-open');
+        });
+
+        view.sidebar.find('.js-matrix').click(function (e) {
+            e.preventDefault();
+            $(this).toggleClass('active');
+            window.scrollTo(0, 0);
+            $('section.matrix').css('min-height', view.body.outerHeight() + 'px');
+            $('section.matrix').toggleClass('active');
+            view.sidebar.find('.js-settings').removeClass('active');
+            view.sidebar.find('.js-profiles').removeClass('active');
+            view.sidebar.find('.js-stats').removeClass('active');
+            $('section.settings').removeClass('active');
+            $('section.profiles').removeClass('active');
+            $('section.stats').removeClass('active');
             view.body.removeClass('sidebar-mobile-open');
         });
 
